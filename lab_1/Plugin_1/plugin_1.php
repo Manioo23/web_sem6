@@ -107,7 +107,7 @@ function nb_add_notice($content) {
 
 	$custom_content = array_pop($notice_array);
 	if($custom_content){
-		$custom_content = "<div class='notice'>" . $custom_content . "</div>";
+		$custom_content = "<div class='notice-board-message'>" . $custom_content . "</div>";
 	}
 
     $custom_content .= $content;
@@ -125,5 +125,8 @@ add_action('init', 'naph_register_styles');
 add_action('wp', 'nb_init_notices_array');
 
 add_filter('the_content', 'nb_add_notice');
+
+
+   
 
 ?>
