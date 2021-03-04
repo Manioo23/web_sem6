@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Plugin 1
+ * Plugin Name: Notice board plugin
  * Description: Plugin z pierwszego zadania lab 1
  * Version: 1.0
  * Requires at least: 5.0
