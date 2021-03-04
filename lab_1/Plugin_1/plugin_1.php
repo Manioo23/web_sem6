@@ -85,5 +85,18 @@ function p1_admin_actions_register_menu()
 	);
 }
 
+
+
 add_action('admin_menu', 'p1_admin_actions_register_menu');
+
+function nb_add_notice($content)	{
+
+	$custom_content = '<h1>NOTICE</h1>';
+    $custom_content .= $content;
+    return $custom_content;
+}
+
+add_filter('the_content', 'nb_add_notice');
+
+
 ?>
