@@ -48,7 +48,7 @@ function p1_admin_page()
 		<form name="p1_form" method="post">
 			<input type="hidden" name="p1_type_of_change" value="NEW">
 			<p>Dodaj nową treść ogłoszenia
-				<input type="text" name="p1_value">
+				<input type="text" name="p1_value" required>
 			</p>
 			<p class="submit"><input type="submit" value="Dodaj"></p>
 		</form>
