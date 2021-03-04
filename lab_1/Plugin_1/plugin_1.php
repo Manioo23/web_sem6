@@ -89,14 +89,30 @@ function p1_admin_actions_register_menu()
 
 add_action('admin_menu', 'p1_admin_actions_register_menu');
 
-function nb_add_notice($content)	{
+$notice_array = [];
 
-	$custom_content = '<h1>NOTICE</h1>';
+function nb_init_notices_array() {
+	
+	global $notice_array;
+	$notice_array = get_option('p1_array');
+	if (gettype($notice_array) != 'array') {
+		$notice_array = [];
+	}
+}
+
+function nb_add_notice($content) {
+
+	global $notice_array;
+	shuffle($notice_array);
+
+	if(!$custom_content = array_pop($notice_array)){
+	}
+
     $custom_content .= $content;
     return $custom_content;
 }
 
+add_action('wp', 'nb_init_notices_array');
 add_filter('the_content', 'nb_add_notice');
-
 
 ?>
