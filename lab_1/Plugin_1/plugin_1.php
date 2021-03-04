@@ -105,14 +105,25 @@ function nb_add_notice($content) {
 	global $notice_array;
 	shuffle($notice_array);
 
-	if(!$custom_content = array_pop($notice_array)){
+	$custom_content = array_pop($notice_array);
+	if($custom_content){
+		$custom_content = "<div class='notice'>" . $custom_content . "</div>";
 	}
 
     $custom_content .= $content;
     return $custom_content;
 }
 
+function naph_register_styles(){
+	//register style
+	wp_register_style('naph_styles', plugins_url('/css/style.css', __FILE__));
+	//enable style (load in meta of html)
+	wp_enqueue_style('naph_styles');
+   }
+   
+add_action('init', 'naph_register_styles'); 
 add_action('wp', 'nb_init_notices_array');
+
 add_filter('the_content', 'nb_add_notice');
 
 ?>
