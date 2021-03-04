@@ -8,9 +8,9 @@
  * Requires PHP: 7.2
  * Author: Szymon Panek, Maciej Witkowski
  */
-define('WP_DEBUG', true);          // Turn on debug mode
-define('WP_DEBUG_LOG', true);      // Logs errors to wp-content/debug.log
-define('WP_DEBUG_DISPLAY', true);
+// define('WP_DEBUG', true);          // Turn on debug mode
+// define('WP_DEBUG_LOG', true);      // Logs errors to wp-content/debug.log
+// define('WP_DEBUG_DISPLAY', true);
 //delete_option('p1_array');
 function p1_admin_page()
 {
@@ -77,8 +77,8 @@ function p1_admin_page()
 function p1_admin_actions_register_menu()
 {
 	add_options_page(
-		"Newly Added Post Highliter",
-		"New Post Highliter",
+		"Notice board plugin",
+		"Notice board",
 		'manage_options',
 		"p1",
 		"p1_admin_page"
