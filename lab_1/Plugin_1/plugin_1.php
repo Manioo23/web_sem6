@@ -47,12 +47,12 @@ function p1_admin_page()
 		<h2>Nowe ogłoszenie</h2>
 		<form name="p1_form" method="post">
 			<input type="hidden" name="p1_type_of_change" value="NEW">
-			<p>Dodaj nową treść ogłoszenia
-				<input type="text" name="p1_value" required>
-			</p>
+			<textarea name="p1_value" value="" cols="100" rows="15"></textarea>
 			<p class="submit"><input type="submit" value="Dodaj"></p>
 		</form>
+
 		<h2>Lista ogłoszeń</h2>
+		
 		<form name="p1_form" method="post">
 			<input type="hidden" name="p1_type_of_change" value="DEL">
 			<p>Wybierz ogłoszenia od usunięcia
@@ -68,7 +68,7 @@ function p1_admin_page()
 				?>
 			</p>
 			<p class="submit"><input type="submit" value="Usuń zaznaczone"></p>
-		</form>
+		</form>	
 	</div>
 <?php
 
@@ -125,8 +125,5 @@ add_action('init', 'naph_register_styles');
 add_action('wp', 'nb_init_notices_array');
 
 add_filter('the_content', 'nb_add_notice');
-
-
-   
 
 ?>
