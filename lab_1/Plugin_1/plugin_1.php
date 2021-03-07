@@ -23,7 +23,6 @@ function p1_admin_page()
 	// process changes from form
 	if (isset($_POST['p1_type_of_change'])) {
 		if ($_POST['p1_type_of_change'] == 'NEW') {
-
 			array_push($array, $_POST['p1_value']);
 			echo "<div class='notice notice-success isdismissible'><p>Dodano nowe ogłoszenie o treści: \"{$_POST['p1_value']}\"</p></div>";
 			update_option('p1_array', $array);
@@ -102,17 +101,21 @@ function nb_init_notices_array() {
 
 function nb_add_notice($content) {
 
-	global $notice_array;
-	shuffle($notice_array);
+	if(nb_contains_tag(get_the_ID(), 'announcement')){
+		global $notice_array;
+		shuffle($notice_array);
 
-	$custom_content = array_pop($notice_array);
-	if($custom_content){
-		$custom_content = "<div class='notice-board-message'>" . $custom_content . "</div>";
+		$custom_content = array_pop($notice_array);
+		if($custom_content){
+			$custom_content = "<div class='notice-board-message'>" . $custom_content . "</div>";
+		}
+		
+		$custom_content .= $content;
+		return $custom_content;
 	}
-
-    $custom_content .= $content;
-    return $custom_content;
+	return $content;
 }
+
 
 function naph_register_styles(){
 	//register style
@@ -125,5 +128,13 @@ add_action('init', 'naph_register_styles');
 add_action('wp', 'nb_init_notices_array');
 
 add_filter('the_content', 'nb_add_notice');
+
+function nb_contains_tag($post_id, $tag)
+{
+    foreach (wp_get_post_tags($post_id) as $a) {
+      if ($a->name === $tag) return true;
+    }
+    return false;
+}
 
 ?>
