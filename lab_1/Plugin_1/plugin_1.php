@@ -8,20 +8,23 @@
  * Requires PHP: 7.2
  * Author: Szymon Panek, Maciej Witkowski
  */
+
 // define('WP_DEBUG', true);          // Turn on debug mode
 // define('WP_DEBUG_LOG', true);      // Logs errors to wp-content/debug.log
 // define('WP_DEBUG_DISPLAY', true);
-//delete_option('p1_array');
+
+// Function that generates Admin Page for this plugin
 function p1_admin_page()
 {
-	// get _POST variable from globals
+	// Get _POST variable from globals
 	global $_POST;
 	$array = get_option('p1_array');
 	if (gettype($array) != 'array') {
 		$array = [];
 	}
-	// process changes from form
+	// Process changes from the form that was sent
 	if (isset($_POST['p1_type_of_change'])) {
+		// Based on hidden input "p1_type_of_change" process the data in differnt ways
 		if ($_POST['p1_type_of_change'] == 'NEW') {
 			array_push($array, $_POST['p1_value']);
 			echo "<div class='notice notice-success isdismissible'><p>Dodano nowe ogłoszenie o treści: \"{$_POST['p1_value']}\"</p></div>";
@@ -36,6 +39,7 @@ function p1_admin_page()
 		}
 	}
 
+	// Get fresh value of p1_array before generating a view
 	$array = get_option('p1_array');
 	if (gettype($array) != 'array') {
 		$array = [];
@@ -51,28 +55,30 @@ function p1_admin_page()
 		</form>
 
 		<h2>Lista ogłoszeń</h2>
-		
+
 		<form name="p1_form" method="post">
 			<input type="hidden" name="p1_type_of_change" value="DEL">
 			<p>Wybierz ogłoszenia od usunięcia
 				<?php
 				for ($i = 0; $i < count($array); $i++) {
+					$notice_parsed = htmlspecialchars($array[$i]);
 					echo "
-					<p>
+					<div>
 						<input type=\"checkbox\" name=\"to_del[]\" value=\"{$i}\"/>
-						<span>{$array[$i]}</span>
-						</p>
+						<span>{$notice_parsed}</span>
+						</div>
 					";
 				}
 				?>
 			</p>
 			<p class="submit"><input type="submit" value="Usuń zaznaczone"></p>
-		</form>	
+		</form>
 	</div>
 <?php
 
 }
 
+// Initialization of admin page
 function p1_admin_actions_register_menu()
 {
 	add_options_page(
@@ -84,14 +90,14 @@ function p1_admin_actions_register_menu()
 	);
 }
 
-
-
+// Associate the admin page function with the hook
 add_action('admin_menu', 'p1_admin_actions_register_menu');
 
 $notice_array = [];
 
-function nb_init_notices_array() {
-	
+function nb_init_notices_array()
+{
+
 	global $notice_array;
 	$notice_array = get_option('p1_array');
 	if (gettype($notice_array) != 'array') {
@@ -99,42 +105,45 @@ function nb_init_notices_array() {
 	}
 }
 
-function nb_add_notice($content) {
+// Function for generating content of the notice
+function nb_add_notice($content)
+{
 
-	if(nb_contains_tag(get_the_ID(), 'announcement')){
+	if (nb_contains_tag(get_the_ID(), 'announcement')) {
 		global $notice_array;
 		shuffle($notice_array);
 
 		$custom_content = array_pop($notice_array);
-		if($custom_content){
+		if ($custom_content) {
 			$custom_content = "<div class='notice-board-message'>" . $custom_content . "</div>";
 		}
-		
+
 		$custom_content .= $content;
 		return $custom_content;
 	}
 	return $content;
 }
 
-
-function naph_register_styles(){
+function naph_register_styles()
+{
 	//register style
 	wp_register_style('naph_styles', plugins_url('/css/style.css', __FILE__));
 	//enable style (load in meta of html)
 	wp_enqueue_style('naph_styles');
-   }
-   
-add_action('init', 'naph_register_styles'); 
+}
+
+add_action('init', 'naph_register_styles');
 add_action('wp', 'nb_init_notices_array');
 
 add_filter('the_content', 'nb_add_notice');
 
+// Function that uses wordpress posts tags
 function nb_contains_tag($post_id, $tag)
 {
-    foreach (wp_get_post_tags($post_id) as $a) {
-      if ($a->name === $tag) return true;
-    }
-    return false;
+	foreach (wp_get_post_tags($post_id) as $a) {
+		if ($a->name === $tag) return true;
+	}
+	return false;
 }
 
 ?>
