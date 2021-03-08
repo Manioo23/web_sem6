@@ -50,7 +50,16 @@ function p1_admin_page()
 		<h2>Nowe ogłoszenie</h2>
 		<form name="p1_form" method="post">
 			<input type="hidden" name="p1_type_of_change" value="NEW">
-			<textarea name="p1_value" value="" cols="100" rows="15"></textarea>
+			<?php
+			$settings = array(
+				'textarea_name' => 'p1_value',
+				'tinymce'       => TRUE,
+				'teeny' => TRUE,
+				'media_buttons' => FALSE
+			);
+
+			wp_editor("", "p1_text_area_id", $settings);
+			?>
 			<p class="submit"><input type="submit" value="Dodaj"></p>
 		</form>
 
