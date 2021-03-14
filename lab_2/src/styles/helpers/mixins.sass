@@ -1,0 +1,34 @@
+@mixin hover
+	&:hover
+		cursor: pointer
+		@content
+
+@mixin display-row($justify: center)
+	display: flex
+	flex-direction: row
+	align-items: center
+	justify-content: $justify
+
+@mixin display-column($justify: center)
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: $justify
+
+@mixin fill-parent($position: relative)
+	position: $position
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+@mixin background-image($url)
+	background-image: url($url)
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+
+@mixin rounded-corner($arc)
+	-moz-border-radius: $arc
+	-webkit-border-radius: $arc
+	border-radius: $arc
