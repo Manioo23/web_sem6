@@ -1,3 +1,4 @@
+import './styles/index.sass'
 
 function App() {
 	return (
@@ -19,12 +20,12 @@ function App() {
 				</div>
 			</header>
 			<main>
-				<section>
+				<section className="landing">
 					<h1>
 						Akwarele w sztuce
 					</h1>
 				</section>
-				<section>
+				<section className="galery">
 					<h2>
 						Galeria
 					</h2>
