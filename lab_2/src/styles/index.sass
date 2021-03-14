@@ -65,7 +65,25 @@ header
 	align-content: center
 
 .navbar
+	@include display-row($justify: space-between)
+
 	width: 100
+	border-bottom: 1px solid black
+	position: relative
+
+	&-links
+		@include display-row($justify: space-between)
+		width: 30%
+	&-link
+		font-size: $font-size-medium
+		color: red
+		padding: 10px
+		margin: 10px
+		@include hover
+			text-decoration: underline
+	&-logo
+		@extend .font-cursive
+		font-size: $font-size-big
 
 .landing
 	@extend .font-cursive
@@ -97,6 +115,10 @@ header
 
 	div
 		@include display-column($justify: center)
+		@include hover
+			@extend .text-secondary
+			height: 400px
+			width: 280px
 		position: relative
 		height: 330px
 		width: 220px
@@ -114,9 +136,6 @@ header
 			object-fit: cover
 			z-index: -2
 		&:hover
-			@extend .text-secondary
-			height: 400px
-			width: 280px
 
 			&::before
 				@include fill-parent($position: absolute)
@@ -129,6 +148,27 @@ h2
 	@extend .text-primary
 	font-size: $font-size-big
 
+h3
+	@extend .text-primary
+	font-size: $font-size-medium
+
+.link
+	&-list
+		@include display-row($justify: space-between)
+		padding: 0px
+		list-style-type: none
+	&-wrapper
+		width: 150px
+		height: 40px
+		text-align: center
+		padding: 10px
+		border: 1px solid black
+		margin: 10px
+		@include hover
+			background: #00000011
+	&-no-style
+		text-decoration: none
+		color: $font-color-primary
 .footer
 	&-dark
 		@include round-top-corners($amount: 20px)
@@ -142,5 +182,5 @@ h2
 			margin-left: 10px
 		p
 			text-align: center
-			font-size: $font-size-big
+			font-size: $font-size-medium
 			margin: 0

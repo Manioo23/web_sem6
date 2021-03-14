@@ -4,17 +4,17 @@ function App() {
 	return (
 		<div className="App">
 			<div className='navbar'>
-				<div>
+				<div className='navbar-logo'>
 					Akwarela
 				</div>
-				<div>
-					<a>
+				<div className='navbar-links'>
+					<a href="" className="link-no-style navbar-link">
 						Galeria
 					</a>
-					<a>
+					<a href="" className="link-no-style navbar-link">
 						Artyści
 					</a>
-					<a>
+					<a href="" className="link-no-style navbar-link">
 						Odnośniki
 					</a>
 				</div>
@@ -64,9 +64,9 @@ function App() {
 					<div className="container">
 						<div className="container-row">
 							<div className="container-col-span-two">
-								<h2>
+								<h3>
 									Juliusz Kossak
-								</h2>
+								</h3>
 								<p className="paragraph-primary">
 									Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
 									Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
@@ -74,9 +74,9 @@ function App() {
 								</p>
 							</div>
 							<div className="container-col-span-two">
-								<h2>
+								<h3>
 									Juliusz Kossak
-								</h2>
+								</h3>
 								<p className="paragraph-primary">
 									Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
 									Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
@@ -87,33 +87,38 @@ function App() {
 					</div>
 				</section>
 				<section>
-					<ul>
-						<li>
-							<a>
-								Link do muzeum sztuki w Warszawie
-							</a>
-						</li>
-						<li>
-							<a>
-								Link do muzeum sztuki w Warszawie
-							</a>
-						</li>
-						<li>
-							<a>
-								Link do muzeum sztuki w Warszawie
-							</a>
-						</li>
-						<li>
-							<a>
-								Link do muzeum sztuki w Warszawie
-							</a>
-						</li>
-						<li>
-							<a>
-								Link do muzeum sztuki w Warszawie
-							</a>
-						</li>
-					</ul>
+					<h2>
+						Linki do źródeł
+					</h2>
+					<div>
+						<ul className="link-list">
+							<li className="link-wrapper">
+								<a href="https://www.mnw.art.pl/" className="link-no-style">
+									Muzeum Narodowe w Warszawie
+								</a>
+							</li>
+							<li className="link-wrapper">
+								<a href="https://www.mnw.art.pl/" className="link-no-style">
+									Muzeum Narodowe w Warszawie
+								</a>
+							</li>
+							<li className="link-wrapper">
+								<a href="https://www.mnw.art.pl/" className="link-no-style">
+									Muzeum Narodowe w Warszawie
+								</a>
+							</li>
+							<li className="link-wrapper">
+								<a href="https://www.mnw.art.pl/" className="link-no-style">
+									Muzeum Narodowe w Warszawie
+								</a>
+							</li>
+							<li className="link-wrapper">
+								<a href="https://www.mnw.art.pl/" className="link-no-style">
+									Muzeum Narodowe w Warszawie
+								</a>
+							</li>
+						</ul>
+					</div>
 				</section>
 
 			</main>
