@@ -124,8 +124,8 @@ function App() {
 					</h3>
 					<div className="container">
 						<div className="container-row">
-							<div className="container-col-span-two">Maciej Witkowski</div>
-							<div className="container-col-span-two">Szymon Panek</div>
+							<div className="container-col-span-two"><p>Maciej Witkowski</p></div>
+							<div className="container-col-span-two"><p>Szymon Panek</p></div>
 						</div>
 					</div>
 				</footer>
