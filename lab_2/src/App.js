@@ -61,23 +61,23 @@ function App() {
 					<h2>
 						Artyści
 					</h2>
-					<div class="container">
-						<div class="container-row">
-							<div class="container-col-span-two">
+					<div className="container">
+						<div className="container-row">
+							<div className="container-col-span-two">
 								<h3>
 								Juliusz Kossak
 								</h3>
-								<p class="paragraph-primary">
+								<p className="paragraph-primary">
 									Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
 									Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
 									Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
 								</p>
 							</div>
-							<div class="container-col-span-two">
+							<div className="container-col-span-two">
 								<h3>
 									Juliusz Kossak
 								</h3>
-								<p class="paragraph-primary">
+								<p className="paragraph-primary">
 									Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
 									Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
 									Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
@@ -121,10 +121,10 @@ function App() {
 				<p>
 					Strona stworzona przez
 				</p>
-				<div class="container">
-					<div class="container-row">
-						<div class="container-col-span-two">Maciej Witkowski</div>
-						<div class="container-col-span-two">Szymon Panek</div>
+				<div className="container">
+					<div className="container-row">
+						<div className="container-col-span-two">Maciej Witkowski</div>
+						<div className="container-col-span-two">Szymon Panek</div>
 					</div>
 				</div>
 			</footer>
