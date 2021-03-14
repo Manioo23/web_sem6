@@ -53,26 +53,30 @@ function App() {
 					<h2>
 						Artyści
 					</h2>
-					<article>
-						<h3>
-							Juliusz Kossak
-						</h3>
-						<p>
-							Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
-							Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
-							Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
-						</p>
-					</article>
-					<article>
-						<h3>
-							Juliusz Kossak
-						</h3>
-						<p>
-							Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
-							Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
-							Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
-						</p>
-					</article>
+					<div class="container">
+						<div class="container-row">
+							<div class="container-col-span-two">
+								<h3>
+								Juliusz Kossak
+								</h3>
+								<p class="paragraph-primary">
+									Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
+									Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
+									Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
+								</p>
+							</div>
+							<div class="container-col-span-two">
+								<h3>
+									Juliusz Kossak
+								</h3>
+								<p class="paragraph-primary">
+									Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
+									Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
+									Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
+								</p>
+							</div>
+						</div>
+					</div>
 				</section>
 				<section>
 					<ul>
