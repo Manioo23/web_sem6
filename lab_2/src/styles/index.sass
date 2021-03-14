@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap')
 @import './variables.sass'
 @import './helpers/functions.sass'
+@import './helpers/mixins.sass'
+@import './helpers/variables.sass'
 
 body
 	padding: 0px
@@ -36,6 +38,11 @@ body
 	background-position: center
 	background-repeat: no-repeat
 	background-size: cover
+
+@mixin rounded-corner($arc)
+	-moz-border-radius: $arc
+	-webkit-border-radius: $arc
+	border-radius: $arc
 
 .font
 	&-serif
@@ -157,3 +164,20 @@ header
 h2
 	@extend .text-primary
 	font-size: $font-size-big
+
+.footer
+	&-dark
+		@include rounded-corner($arc: 30px)
+
+		padding: 10px 0
+		background-color: $footer-color-primary
+		color: $footer-color-secondary
+		font-weight: bold
+		h3
+			@extend .text-primary
+			color: $footer-color-secondary
+			margin-left: 10px
+		p
+			text-align: center
+			font-size: $font-size-big
+			margin: 0
