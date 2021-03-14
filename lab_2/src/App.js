@@ -29,23 +29,31 @@ function App() {
 					<h2>
 						Galeria
 					</h2>
-					<div>
-						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fa%C5%82at_%C5%9Awite%C5%BA.jpg/440px-Fa%C5%82at_%C5%9Awite%C5%BA.jpg"
-							alt="Świteź"
-						/>
-					</div>
-					<div>
-						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fa%C5%82at_%C5%9Awite%C5%BA.jpg/440px-Fa%C5%82at_%C5%9Awite%C5%BA.jpg"
-							alt="Świteź"
-						/>
-					</div>
-					<div>
-						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fa%C5%82at_%C5%9Awite%C5%BA.jpg/440px-Fa%C5%82at_%C5%9Awite%C5%BA.jpg"
-							alt="Świteź"
-						/>
+					<div className='wrapper'>
+						<div>
+							<h4>Świteź</h4>
+							<h5>Juliana Fałata</h5>
+							<img
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fa%C5%82at_%C5%9Awite%C5%BA.jpg/440px-Fa%C5%82at_%C5%9Awite%C5%BA.jpg"
+								alt="Świteź"
+							/>
+						</div>
+						<div>
+							<h4>Świteź</h4>
+							<h5>Juliana Fałata</h5>
+							<img
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fa%C5%82at_%C5%9Awite%C5%BA.jpg/440px-Fa%C5%82at_%C5%9Awite%C5%BA.jpg"
+								alt="Świteź"
+							/>
+						</div>
+						<div>
+							<h4>Świteź</h4>
+							<h5>Juliana Fałata</h5>
+							<img
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fa%C5%82at_%C5%9Awite%C5%BA.jpg/440px-Fa%C5%82at_%C5%9Awite%C5%BA.jpg"
+								alt="Świteź"
+							/>
+						</div>
 					</div>
 				</section>
 				<div />
