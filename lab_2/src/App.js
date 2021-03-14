@@ -3,9 +3,9 @@ import './styles/index.sass'
 function App() {
 	return (
 		<div className="App">
-			<header>
+			<div className='navbar'>
 				<div>
-					Left side
+					Akwarela
 				</div>
 				<div>
 					<a>
@@ -18,7 +18,7 @@ function App() {
 						Odnośniki
 					</a>
 				</div>
-			</header>
+			</div>
 			<main>
 				<section className="landing">
 					<h1>
@@ -61,26 +61,29 @@ function App() {
 					<h2>
 						Artyści
 					</h2>
-					<article>
-						<h3>
-							Juliusz Kossak
+					<div>
+
+						<article>
+							<h3>
+								Juliusz Kossak
 						</h3>
-						<p>
-							Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
-							Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
-							Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
+							<p>
+								Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
+								Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
+								Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
 						</p>
-					</article>
-					<article>
-						<h3>
-							Juliusz Kossak
+						</article>
+						<article>
+							<h3>
+								Juliusz Kossak
 						</h3>
-						<p>
-							Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
-							Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
-							Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
+							<p>
+								Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
+								Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
+								Do ulubionych przez artystę tematów sztuki należały sceny z rycerskiej przeszłości Polaków, a także konie
 						</p>
-					</article>
+						</article>
+					</div>
 				</section>
 				<section>
 					<ul>
