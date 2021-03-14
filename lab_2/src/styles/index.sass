@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap')
+@import './variables.sass'
+
+@mixin font-serif
+	font-family: 'Playfair Display', serif
+
+@mixin font-cursive
+	font-family: 'Petit Formal Script', cursive
+
+@mixin font-primary
+	@include font-serif
+	font-size: $font-size-default
+	color: $font-color-primary
+
+@mixin font-secondary
+	@include font-serif
+
+	font-size: $font-size-default
+	color: $font-color-secondary
+
+@mixin paragraph-primary
+	@include font-primary
+
+	margin: $margin-default
+	background-color: $color-primary
+
+*
+	@include font-primary
+
+p
+	@include paragraph-primary
