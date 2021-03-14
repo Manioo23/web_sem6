@@ -37,6 +37,12 @@ body
 	background-repeat: no-repeat
 	background-size: cover
 
+@mixin rounded-corner($arc)
+    -moz-border-radius: $arc
+    -webkit-border-radius: $arc
+    border-radius: $arc
+
+
 .font
 	&-serif
 		font-family: 'Playfair Display', serif
@@ -143,6 +149,19 @@ h2
 	@extend .text-primary
 	font-size: $font-size-big
 
+.footer
+	&-dark
+		@include rounded-corner($arc: 30px)
+		
+		padding: 10px 0
+		background-color: $footer-color-primary
+		color: $footer-color-secondary
+		h3
+			@extend .text-primary
+			color: $footer-color-secondary
+			font-weight: bold
+			margin-left: 10px
+		
 .container
 	&-fluid
 		margin: 0

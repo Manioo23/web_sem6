@@ -64,9 +64,9 @@ function App() {
 					<div className="container">
 						<div className="container-row">
 							<div className="container-col-span-two">
-								<h3>
+								<h2>
 								Juliusz Kossak
-								</h3>
+								</h2>
 								<p className="paragraph-primary">
 									Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
 									Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
@@ -74,9 +74,9 @@ function App() {
 								</p>
 							</div>
 							<div className="container-col-span-two">
-								<h3>
+								<h2>
 									Juliusz Kossak
-								</h3>
+								</h2>
 								<p className="paragraph-primary">
 									Twórca wielkoformatowych akwarel o tematyce historycznej, przyrodniczej i folklorystycznej.
 									Uważany jest za mistrza techniki akwarelowej, pioniera polskiego malarstwa batalistycznego oraz klasyka malarstwa „literackiego".
@@ -117,17 +117,19 @@ function App() {
 				</section>
 
 			</main>
-			<footer>
-				<p>
-					Strona stworzona przez
-				</p>
-				<div className="container">
-					<div className="container-row">
-						<div className="container-col-span-two">Maciej Witkowski</div>
-						<div className="container-col-span-two">Szymon Panek</div>
+			<div className='footer-dark'>
+				<footer>
+					<h3>
+						Strona stworzona przez:
+					</h3>
+					<div className="container">
+						<div className="container-row">
+							<div className="container-col-span-two">Maciej Witkowski</div>
+							<div className="container-col-span-two">Szymon Panek</div>
+						</div>
 					</div>
-				</div>
-			</footer>
+				</footer>
+			</div>
 		</div>
 	);
 }
