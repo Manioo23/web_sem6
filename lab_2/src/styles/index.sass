@@ -97,12 +97,10 @@ header
 	&-fluid 
 		margin: 0
 		max-width: 100%
-	&-row 
-		display: flex
+	&-row
+		@include display-row($justify: center)
 		flex-wrap: wrap
 		width: 100%
 	&-col 
 		&-span-two
 			flex-basis: calculate-col-width(2)
-		&-span-three
-			flex-basis: calculate-col-width(3)
