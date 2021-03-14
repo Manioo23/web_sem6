@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap')
 @import './variables.sass'
+@import './helpers/functions.sass'
 
 body
 	padding: 0px
@@ -141,3 +142,15 @@ header
 h2
 	@extend .text-primary
 	font-size: $font-size-big
+
+.container
+	&-fluid
+		margin: 0
+		max-width: 100%
+	&-row
+		@include display-row($justify: center)
+		flex-wrap: wrap
+		width: 100%
+	&-col
+		&-span-two
+			flex-basis: calculate-col-width(2)
