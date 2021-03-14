@@ -108,13 +108,13 @@ function App() {
 			<footer>
 				<p>
 					Strona stworzona przez
-					<span>
-						Szymon Panek
-					</span>
-					<span>
-						Maciej Witkowski
-					</span>
 				</p>
+				<div class="container">
+					<div class="container-row">
+						<div class="container-col-span-two">Maciej Witkowski</div>
+						<div class="container-col-span-two">Szymon Panek</div>
+					</div>
+				</div>
 			</footer>
 		</div>
 	);
