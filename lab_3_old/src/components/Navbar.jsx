@@ -1,17 +1,25 @@
 import React from 'react'
-import { MDBCollapse, MDBContainer, MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBFormInline, MDBIcon, MDBLink, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBNavItem } from 'mdbreact';
+import {
+	MDBCollapse, MDBContainer,
+	MDBDropdown, MDBDropdownItem,
+	MDBNavbarBrand, MDBNavbarNav,
+	MDBNavbarToggler, MDBNavItem,
+	MDBFormInline, MDBLink, MDBNavbar,
+	MDBDropdownMenu, MDBDropdownToggle,
+} from 'mdbreact';
 
 class Navbar extends React.Component {
 	state = {
 		isOpen: true
 	}
+
 	toggleCollapse = () => {
 		this.setState({ isOpen: !this.state.isOpen })
 	}
 
 	render() {
 		return (
-			<MDBNavbar dark={true} color='special-color' dark expand="lg">
+			<MDBNavbar color='special-color' expand="lg" fixed="top" dark>
 				<MDBContainer>
 					<MDBNavbarBrand>PC-MR</MDBNavbarBrand>
 					<MDBNavbarToggler onClick={this.toggleCollapse} />
@@ -21,7 +29,7 @@ class Navbar extends React.Component {
 								<MDBLink to="#!">Strona główna</MDBLink>
 							</MDBNavItem>
 							<MDBNavItem>
-								<MDBLink to="#!">Gotowe komputery</MDBLink>
+								<MDBLink to="#!">Podróże</MDBLink>
 							</MDBNavItem>
 							<MDBNavItem>
 								<MDBLink to="#!">Cennik</MDBLink>
@@ -29,13 +37,13 @@ class Navbar extends React.Component {
 							<MDBNavItem>
 								<MDBDropdown>
 									<MDBDropdownToggle nav caret>
-										<span className="mr-2">Sklep</span>
+										<span className="mr-2">Inne</span>
 									</MDBDropdownToggle>
 									<MDBDropdownMenu>
-										<MDBDropdownItem>Części komputerowe</MDBDropdownItem>
-										<MDBDropdownItem>Urządzenia peryferyjne</MDBDropdownItem>
-										<MDBDropdownItem>Smart home</MDBDropdownItem>
-										<MDBDropdownItem>Inne</MDBDropdownItem>
+										<MDBDropdownItem>Podróże</MDBDropdownItem>
+										<MDBDropdownItem>Podróże</MDBDropdownItem>
+										<MDBDropdownItem>Podróże</MDBDropdownItem>
+										<MDBDropdownItem>Podróże</MDBDropdownItem>
 									</MDBDropdownMenu>
 								</MDBDropdown>
 							</MDBNavItem>
@@ -51,7 +59,7 @@ class Navbar extends React.Component {
 						</MDBNavbarNav>
 					</MDBCollapse>
 				</MDBContainer>
-			</MDBNavbar>
+			</MDBNavbar >
 		);
 	}
 }
