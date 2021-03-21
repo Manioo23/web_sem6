@@ -37,6 +37,7 @@ const Carousel = () => (
                                         overlay="white-slight" />
                                     <MDBCardBody>
                                         <MDBCardTitle tag="h5"><strong>Alice Mayer</strong></MDBCardTitle>
+                                        <p className='font-weight-bold blue-text'>Photographer</p>
                                         <MDBCardText>
                                             Some quick example text to build on the card title and make up
                                             the bulk of the card's content.
