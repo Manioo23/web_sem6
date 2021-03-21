@@ -1,4 +1,4 @@
-import { MDBBox, MDBCardImage, MDBCol, MDBContainer, MDBRow, MDBTypography, MDBView } from 'mdbreact';
+import { MDBBox, MDBCol, MDBContainer, MDBRow, MDBTypography } from 'mdbreact';
 import React from 'react';
 
 const PhotoSection = () => (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
 	MDBCollapse, MDBContainer,
 	MDBDropdown, MDBDropdownItem,
@@ -8,7 +8,7 @@ import {
 	MDBDropdownMenu, MDBDropdownToggle,
 } from 'mdbreact';
 
-class Navbar extends React.Component {
+class Navbar extends Component {
 	state = {
 		isOpen: true
 	}
@@ -21,7 +21,7 @@ class Navbar extends React.Component {
 		return (
 			<MDBNavbar color='special-color' expand="lg" fixed="top" dark>
 				<MDBContainer>
-					<MDBNavbarBrand>PC-MR</MDBNavbarBrand>
+					<MDBNavbarBrand>Podróże.com</MDBNavbarBrand>
 					<MDBNavbarToggler onClick={this.toggleCollapse} />
 					<MDBCollapse id="navbar-collapse" isOpen={this.state.isOpen} navbar>
 						<MDBNavbarNav left>
