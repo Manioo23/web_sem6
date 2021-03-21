@@ -4,6 +4,7 @@ import LastTravels from './LastTravels';
 import '../styles/index.sass'
 import PhotoSection from './PhotoSection';
 import Carousel from './Carousel';
+import Accordion from './Accordion';
 
 class Main extends Component {
 	render() {
@@ -18,6 +19,7 @@ class Main extends Component {
 					<section id="gallery">
 					</section>
 					<Carousel />
+					<Accordion />
 					<hr class="my-5" />
 					<section id='map'>
 						<div class="container-fluid m-0 p-0">
