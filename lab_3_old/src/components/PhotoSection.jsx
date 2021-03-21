@@ -8,7 +8,7 @@ const PhotoSection = () => (
 				<div
 					className="bg-image container-fluid bg-cover"
 					style={{
-						backgroundImage: `url("https://images.pexels.com/photos/3885493/pexels-photo-3885493.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")`,
+						backgroundImage: `url("https://images.pexels.com/photos/3885493/pexels-photo-3885493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")`,
 						height: "100%",
 						backgroundSize: "cover",
 						backgroundPositionY: "85%"
