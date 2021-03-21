@@ -18,6 +18,7 @@ class Main extends Component {
 					<section id="gallery">
 					</section>
 					<Carousel />
+					<hr class="my-5" />
 					<section id='map'>
 						<div class="container-fluid m-0 p-0">
 							<div id="map-container-google-4" class="z-depth-1-half map-container-4">
