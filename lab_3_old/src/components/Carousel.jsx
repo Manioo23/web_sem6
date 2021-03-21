@@ -9,8 +9,9 @@ const Carousel = () => (
                 activeItem={1}
                 length={3}
                 showControls={true}
-                showIndicators={true}
+                showIndicators={false}
                 className="z-depth-1"
+                slide
             >
                 <MDBCarouselInner>
                     <MDBCarouselItem itemId="1">
