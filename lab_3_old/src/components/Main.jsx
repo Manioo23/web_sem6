@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Contact from './Contact';
 import LastTravels from './LastTravels';
 
 class Main extends Component {
@@ -11,8 +12,7 @@ class Main extends Component {
 					<section id="gallery">
 					</section>
 					<hr class="my-5" />
-					<section id="contact">
-					</section>
+					<Contact />
 				</div>
 			</main>
 		)
