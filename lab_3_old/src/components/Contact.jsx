@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Contact = () => (
-	<section id="lastTravels" class="text-center">
+	<section id="contact" class="text-center">
         <section class="mb-4">
 
             <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
