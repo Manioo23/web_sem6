@@ -1,4 +1,4 @@
-import { MDBCol, MDBRow, MDBView } from 'mdbreact';
+import { MDBCol, MDBMask, MDBRow, MDBView } from 'mdbreact';
 import React from 'react';
 
 const img_srcs = [
@@ -15,7 +15,7 @@ const prepareImage = (src, index) => (
 		<MDBView className="overlay z-depth-1-half">
 			<img src={src} class="img-fluid" alt={"Trip Photo " + (index + 1)} />
 			<a href="#!">
-				<div class="mask rgba-blue-light"></div>
+				<MDBMask overlay="blue-light" />
 			</a>
 			<h4 class="my-4 font-weight-bold">Podróż {index + 1}</h4>
 			<p class="grey-text">
