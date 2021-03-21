@@ -11,7 +11,7 @@ class Navbar extends React.Component {
 
 	render() {
 		return (
-			<MDBNavbar dark={true} color='indigo' dark expand="lg">
+			<MDBNavbar dark={true} color='special-color' dark expand="lg">
 				<MDBContainer>
 					<MDBNavbarBrand>PC-MR</MDBNavbarBrand>
 					<MDBNavbarToggler onClick={this.toggleCollapse} />
@@ -20,10 +20,10 @@ class Navbar extends React.Component {
 							<MDBNavItem active>
 								<MDBLink to="#!">Strona główna</MDBLink>
 							</MDBNavItem>
-							<MDBNavItem active>
+							<MDBNavItem>
 								<MDBLink to="#!">Gotowe komputery</MDBLink>
 							</MDBNavItem>
-							<MDBNavItem active>
+							<MDBNavItem>
 								<MDBLink to="#!">Cennik</MDBLink>
 							</MDBNavItem>
 							<MDBNavItem>
@@ -31,14 +31,14 @@ class Navbar extends React.Component {
 									<MDBDropdownToggle nav caret>
 										<span className="mr-2">Sklep</span>
 									</MDBDropdownToggle>
+									<MDBDropdownMenu>
+										<MDBDropdownItem>Części komputerowe</MDBDropdownItem>
+										<MDBDropdownItem>Urządzenia peryferyjne</MDBDropdownItem>
+										<MDBDropdownItem>Smart home</MDBDropdownItem>
+										<MDBDropdownItem>Inne</MDBDropdownItem>
+									</MDBDropdownMenu>
 								</MDBDropdown>
 							</MDBNavItem>
-							<MDBDropdownMenu>
-								<MDBDropdownItem>Części komputerowe</MDBDropdownItem>
-								<MDBDropdownItem>Urządzenia peryferyjne</MDBDropdownItem>
-								<MDBDropdownItem>Smart home</MDBDropdownItem>
-								<MDBDropdownItem>Inne</MDBDropdownItem>
-							</MDBDropdownMenu>
 						</MDBNavbarNav>
 						<MDBNavbarNav right>
 							<MDBNavItem>
