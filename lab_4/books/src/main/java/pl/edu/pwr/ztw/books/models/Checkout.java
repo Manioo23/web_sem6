@@ -28,6 +28,11 @@ public class Checkout {
         this.book = book;
     }
 
+    public Checkout(Person person, Book book) {
+        this.person = person;
+        this.book = book;
+    }
+
     public Long getId() {
         return id;
     }
