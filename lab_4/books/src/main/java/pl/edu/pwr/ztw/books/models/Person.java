@@ -7,12 +7,11 @@ import java.util.List;
 @Table(name="persons")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
     private String firstName;
     private String lastName;
     private int phoneNumber;
-    private String address;
 
     @OneToMany(mappedBy = "person")
     List<Checkout> checkouts;

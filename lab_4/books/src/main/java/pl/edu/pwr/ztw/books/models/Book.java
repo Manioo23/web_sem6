@@ -20,6 +20,14 @@ public class Book {
     @OneToMany(mappedBy = "book")
     List<Checkout> checkouts;
 
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
     public String getTitle() {
         return title;
     }

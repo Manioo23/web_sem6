@@ -22,7 +22,7 @@ public class BookController {
 
     @RequestMapping(value = "/get/books/{id}", method = RequestMethod.GET)
     public ResponseEntity<Object> getBook(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(bookService.getOne(id), HttpStatus.OK);
+        return new ResponseEntity<>(bookService.findById(id), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/books/{id}", method = RequestMethod.PUT)

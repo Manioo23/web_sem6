@@ -20,17 +20,17 @@ public class CheckoutController {
     CheckoutService checkoutService;
 
     @RequestMapping(value = "/checkout", method = RequestMethod.POST)
-    public ResponseEntity<Object> addCheckout(@RequestBody Person person, @RequestBody Book book) {
-        List<Checkout> checkouts = checkoutService.findByBook(book.getId());
+    public ResponseEntity<Object> addCheckout(@RequestBody Checkout checkout) {
+        List<Checkout> checkouts = checkoutService.findAllByBook(checkout.getBook());
         boolean bIsLend = checkouts.size() % 2 == 1;
         if(bIsLend) {
-            if(checkouts.get(checkouts.size() - 1).getPerson().getId() == person.getId()) {
-                return new ResponseEntity<>(checkoutService.save(new Checkout(null, person, book)), HttpStatus.OK);
+            if(checkouts.get(checkouts.size() - 1).getPerson().getId().equals(checkout.getPerson().getId())) {
+                return new ResponseEntity<>(checkoutService.save(checkout), HttpStatus.CREATED);
             } else {
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
             }
         } else {
-            return new ResponseEntity<>(checkoutService.save(new Checkout(null, person, book)), HttpStatus.OK);
+            return new ResponseEntity<>(checkoutService.save(checkout), HttpStatus.CREATED);
         }
     }
 
