@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table
 public class Checkout {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -22,7 +22,8 @@ public class Checkout {
     }
 
     public Checkout(Long id, Person person, Book book) {
-        this.id = id;
+        if(id != null)
+            this.id = id;
         this.person = person;
         this.book = book;
     }
