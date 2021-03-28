@@ -1,9 +1,7 @@
 package pl.edu.pwr.ztw.books.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="books")
@@ -13,8 +11,14 @@ public class Book {
     @GeneratedValue
     private Long id;
     private String title;
-    private String author;
     private int pages;
+
+    @ManyToOne
+    @JoinColumn(name="author_id")
+    private Author author;
+
+    @OneToMany(mappedBy = "book")
+    List<Checkout> checkouts;
 
     public String getTitle() {
         return title;
@@ -22,14 +26,6 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public int getPages() {

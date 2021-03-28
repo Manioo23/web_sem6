@@ -1,9 +1,7 @@
 package pl.edu.pwr.ztw.books.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="authors")
@@ -14,6 +12,9 @@ public class Author {
     private String firstName;
     private String middleName;
     private String lastName;
+
+    @OneToMany(mappedBy="author")
+    List<Book> books;
 
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
