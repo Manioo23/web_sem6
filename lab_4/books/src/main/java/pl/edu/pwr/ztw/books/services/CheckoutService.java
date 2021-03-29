@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface CheckoutService extends JpaRepository<Checkout, Long> {
     public List<Checkout> findAllByBook(Book book);
+    public List<Checkout> findCheckoutByPersonId(Long id);
 }
