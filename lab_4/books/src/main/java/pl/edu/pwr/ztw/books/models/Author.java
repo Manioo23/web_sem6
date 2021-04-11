@@ -7,7 +7,7 @@ import java.util.List;
 @Table(name="authors")
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
     private String firstName;
     private String middleName;
@@ -15,6 +15,10 @@ public class Author {
 
     @OneToMany(mappedBy="author")
     List<Book> books;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }

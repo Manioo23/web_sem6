@@ -22,12 +22,19 @@ public class BookController {
 
     @RequestMapping(value = "/get/books/{id}", method = RequestMethod.GET)
     public ResponseEntity<Object> getBook(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(bookService.getOne(id), HttpStatus.OK);
+        Optional<Book> item = bookService.findById(id);
+        if (item.isPresent()){
+            return new ResponseEntity<>(item, HttpStatus.OK);
+        }
+        else{
+            return new ResponseEntity<>("ERROR",HttpStatus.NOT_FOUND);
+        }
     }
 
     @RequestMapping(value = "/books/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Object> replaceBook(@RequestBody Book newBook) {
         return new ResponseEntity<>(bookService.save(newBook), HttpStatus.OK);
+
     }
 
     @RequestMapping(value = "/books/{id}", method = RequestMethod.DELETE)
@@ -38,7 +45,7 @@ public class BookController {
             return new ResponseEntity<>(HttpStatus.OK);
         }
         else{
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 

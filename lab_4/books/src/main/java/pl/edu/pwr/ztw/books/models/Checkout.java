@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table
 public class Checkout {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
     @ManyToOne
@@ -16,22 +16,6 @@ public class Checkout {
     @ManyToOne
     @JoinColumn(name="book_id")
     private Book book;
-
-    public Checkout(){
-
-    }
-
-    public Checkout(Long id, Person person, Book book) {
-        if(id != null)
-            this.id = id;
-        this.person = person;
-        this.book = book;
-    }
-
-    public Checkout(Person person, Book book) {
-        this.person = person;
-        this.book = book;
-    }
 
     public Long getId() {
         return id;
