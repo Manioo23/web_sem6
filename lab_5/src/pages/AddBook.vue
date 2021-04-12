@@ -42,7 +42,7 @@ export default {
 
     async addBook(book) {
       const request = new Request("http://localhost:8081/books", {
-        method: "PUT",
+        method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

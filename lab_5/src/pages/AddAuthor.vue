@@ -16,7 +16,7 @@ export default {
     MainLayout,
   },
   methods: {
-    async addAuthors(author) {
+    async addAuthor(author) {
       const request = new Request("http://localhost:8081/authors", {
         method: "POST",
         headers: {
