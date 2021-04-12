@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Tytuł Strony</h1>
+    <h1>Książki inc.</h1>
     <ul class="links">
       <li class="link">
         <router-link
@@ -13,9 +13,9 @@
       <li class="link">
         <router-link
           :to="{
-            name: 'Home',
+            name: 'AddBook',
           }"
-          >Strona główna</router-link
+          >Dodaj książkę</router-link
         >
       </li>
       <li class="link">
@@ -27,6 +27,7 @@
         >
       </li>
     </ul>
+    <hr />
     <slot></slot>
   </div>
 </template>
@@ -54,11 +55,16 @@ export default {
 }
 
 .link {
-  margin: 0px 10px;
+  padding: 5px 20px;
+  margin-right: 20px;
+  border: 2px darkgray solid;
+  border-radius: 10px;
+  transition: all ease-out 300ms;
 }
 
 .link:hover {
   cursor: pointer;
   text-decoration: underline;
+  border-color: black;
 }
 </style>
