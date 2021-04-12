@@ -32,8 +32,21 @@
 <script>
 export default {
   name: "books-table",
+  methods: {
+    async removeBook(id) {
+      const request = new Request("http://localhost:8080/books/" + id, {
+        method: "DELETE",
+      });
+      try {
+        await fetch(request);
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
   props: {
     bookSource: Array,
   },
+
 };
 </script>
