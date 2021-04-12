@@ -15,6 +15,7 @@ public class BookController {
     @Autowired
     BookService bookService;
 
+    @CrossOrigin(origins = "http://localhost:8080/*")
     @RequestMapping(value = "/get/books", method = RequestMethod.GET)
     public ResponseEntity<Object> getBooks() {
         return new ResponseEntity<>(bookService.findAll(), HttpStatus.OK);

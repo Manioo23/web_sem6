@@ -37,13 +37,18 @@
         },
         methods: {
             async getBooks() {
-                try {
-                    const response = await fetch('http://localhost:8081/books')
-                    const data = await response.json()
-                    this.books = data
-                } catch (error) {
-                    console.error(error)
-                }
+            const request = new Request("http://localhost:8081/get/books", {
+                method: "GET",
+                mode: 'no-cors',            
+                credentials: 'same-origin',
+            });
+            try {
+                const response = await fetch(request);
+                const data = await response.json();
+                this.books = data;
+            } catch (error) {
+                console.error(error);
+            }
             },
 
         },
