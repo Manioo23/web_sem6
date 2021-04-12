@@ -1,6 +1,11 @@
 <template>
   <main-layout>
-    <h3>Dodaj Książkę</h3>
+    <h3>Aktualizuj Książkę</h3>
+    <select v-model="bookId">
+      <option v-for="book in this.books" :key="book.id" :value="book.id">
+        {{ book.title }}
+      </option>
+    </select>
     <book-form @add:book="addBook" :authorSource="authors" />
   </main-layout>
 </template>
@@ -10,7 +15,7 @@ import BookForm from "@/components/BookForm.vue";
 import MainLayout from "@/layouts/MainLayout.vue";
 
 export default {
-  name: "add-book",
+  name: "update-book",
   components: {
     BookForm,
     MainLayout,
@@ -24,6 +29,8 @@ export default {
           lastName: "Mickiewicz",
         },
       ],
+      books: [],
+      bookId: "",
     };
   },
 
@@ -39,7 +46,17 @@ export default {
         console.error(error);
       }
     },
-
+    async getBooks() {
+      try {
+        const response = await fetch("http://localhost:8081/get/books", {
+          method: "GET",
+        });
+        const data = await response.json();
+        this.books = data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
     async addBook(book) {
       const request = new Request("http://localhost:8081/books", {
         method: "PUT",
@@ -47,7 +64,7 @@ export default {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(book),
+        body: JSON.stringify({ ...book, id: this.bookId }),
       });
       try {
         await fetch(request);
@@ -59,6 +76,7 @@ export default {
 
   mounted() {
     this.getAuthors();
+    this.getBooks();
   },
 };
 </script>

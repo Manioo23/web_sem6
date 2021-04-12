@@ -21,9 +21,17 @@
       <li class="link">
         <router-link
           :to="{
-            name: 'Home',
+            name: 'UpdateBook',
           }"
-          >Strona główna</router-link
+          >Aktualizuj książkę</router-link
+        >
+      </li>
+      <li class="link">
+        <router-link
+          :to="{
+            name: 'AddAuthor',
+          }"
+          >Dodaj Autora</router-link
         >
       </li>
     </ul>
