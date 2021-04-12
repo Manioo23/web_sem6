@@ -21,9 +21,7 @@
 
           <td>
             <!-- <router-link :to="{name: 'update',params: {bookId: book.id}}">Edit</router-link> | -->
-                        <form @submit="removeBook">
-                            <button>Usuń książkę</button>
-                        </form>
+            <button v-on:click="removeBook(book.id)">Usuń książkę</button>
           </td>
         </tr>
       </tbody>
