@@ -15,7 +15,11 @@ public class BookController {
     @Autowired
     BookService bookService;
 
+<<<<<<< HEAD
     @CrossOrigin(origins = "http://localhost:8080")
+=======
+    @CrossOrigin(origins = "http://localhost:8080/*")
+>>>>>>> 92d9846... yep
     @RequestMapping(value = "/get/books", method = RequestMethod.GET)
     public ResponseEntity<Object> getBooks() {
         return new ResponseEntity<>(bookService.findAll(), HttpStatus.OK);

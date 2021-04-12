@@ -15,8 +15,8 @@
                     <td>{{ book.author.firstName + " " + book.author.lastName}}</td>       
 
                     <td>
-                        <router-link :to="{name: 'update',params: {bookId: book.id}}">Edit</router-link> |
-                        <router-link :to="{name: 'remove',params: {bookId: book.id}}">Delete</router-link>
+                        <!-- <router-link :to="{name: 'update',params: {bookId: book.id}}">Edit</router-link> |
+                        <router-link :to="{name: 'remove',params: {bookId: book.id}}">Delete</router-link> -->
                     </td>
 
                 </tr>
