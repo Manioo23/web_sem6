@@ -20,8 +20,10 @@
           <td>{{ book.pages }}</td>
 
           <td>
-            <!-- <router-link :to="{name: 'update',params: {bookId: book.id}}">Edit</router-link> |
-                        <router-link :to="{name: 'remove',params: {bookId: book.id}}">Delete</router-link> -->
+            <!-- <router-link :to="{name: 'update',params: {bookId: book.id}}">Edit</router-link> | -->
+                        <form @submit="removeBook">
+                            <button>Usuń książkę</button>
+                        </form>
           </td>
         </tr>
       </tbody>
