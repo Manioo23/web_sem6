@@ -26,7 +26,7 @@
         methods: {
             async getAuthors() {
                 try {
-                    const response = await fetch('http://localhost:8080/get/authors')
+                    const response = await fetch('http://localhost:8081/authors')
                     const data = await response.json()
                     this.authors = data
                 } catch (error) {
@@ -35,7 +35,7 @@
             },
 
             async addBook(book) {
-                const request = new Request('http://localhost:8080/create/book',{
+                const request = new Request('http://localhost:8081/books',{
                     method: "PUT",
                     headers: {
                         'Accept': 'application/json',
