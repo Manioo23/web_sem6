@@ -21,9 +21,9 @@
       <li class="link">
         <router-link
           :to="{
-            name: 'Home',
+            name: 'Books',
           }"
-          >Strona główna</router-link
+          >Książki</router-link
         >
       </li>
     </ul>
