@@ -34,6 +34,14 @@
           >Dodaj Autora</router-link
         >
       </li>
+      <li class="link">
+        <router-link
+          :to="{
+            name: 'Books',
+          }"
+          >Książki</router-link
+        >
+      </li>
     </ul>
     <hr />
     <slot></slot>

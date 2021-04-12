@@ -6,7 +6,8 @@ import NotFound from './pages/NotFound.vue';
 import App from './App.vue';
 import AddBook from './pages/AddBook.vue';
 import UpdateBook from './pages/UpdateBook.vue';
-import AddAuthor from './pages/AddAuthor.vue'
+import AddAuthor from './pages/AddAuthor.vue';
+import Books from './pages/Books.vue';
 Vue.config.devtools = true
 
 Vue.use(Router)
@@ -37,7 +38,12 @@ new Vue({
 			{
 				path: '/*',
 				component: NotFound
-			}
+			},
+			{
+				name: 'Books',
+				path: '/books/*',
+				component: Books
+			},
 		]
 	}),
 	...App
