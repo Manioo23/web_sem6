@@ -1,29 +1,77 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React, { useState } from "react"
+import '../index.css'
+import { graphql } from 'gatsby'
+import TemplateWrapper from "../layouts"
+import SearchBar from '../components/SearchContainer';
+import { useFlexSearch } from 'react-use-flexsearch';
+import PostComponent from '../components/PostComponent';
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+const unflattenResults = results =>
+    results.map(post => {
+        const { date, slug, tags, title, author, excerpt, timeToRead, avatar } = post;
+        return { fields: {slug}, frontmatter: { title, date, tags, author, avatar} , timeToRead, excerpt };
+    });
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+const IndexPage = ({
+    data: {
+        localSearchPages: { index, store },
+        allMarkdownRemark: { nodes },
+    },
+}) => {
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('search');
+    const [searchQuery, setSearchQuery] = useState(query || '');
 
-export default IndexPage
+    const results = useFlexSearch(searchQuery, index, store);
+    const posts = searchQuery ? unflattenResults(results) : nodes;
+
+    return (
+
+        <TemplateWrapper>
+        <div>
+            <SearchBar
+                searchQuery = { searchQuery }
+                setSearchQuery = { setSearchQuery }
+            />
+            {posts.map(post => (
+                <PostComponent post={post} />
+            ))}
+        </div>
+        </TemplateWrapper>
+    );
+};
+
+
+export default IndexPage;
+
+
+export const query = graphql`
+query HomePageQuery{
+  localSearchPages {
+      index
+      store
+  }
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date
+          author
+          avatar {
+            childImageSharp {
+                fixed(width: 125 , height:125){
+                    ...GatsbyImageSharpFixed
+                }
+            }
+        }
+        }
+        excerpt
+        timeToRead
+      }
+    }
+}
+`
