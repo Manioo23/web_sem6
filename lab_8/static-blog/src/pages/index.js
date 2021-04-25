@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import '../index.css'
 import { graphql } from 'gatsby'
 import TemplateWrapper from "../layouts"
-import SearchBar from '../components/SearchContainer';
+import SearchBar from '../components/SearchComponent';
 import { useFlexSearch } from 'react-use-flexsearch';
 import PostComponent from '../components/PostComponent';
 
